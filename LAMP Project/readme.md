@@ -157,6 +157,17 @@ You should see this:
 <img width="1200" height="907" alt="image" src="https://github.com/user-attachments/assets/ca8f82a6-31d0-487b-b59c-470089bea7bb" />
 
 
+## Finally : Cleanup
+
+If you no longer need the setup:
+
+Terminate the EC2 instance from AWS Console.
+
+Delete associated security groups and key pairs.
+
+
+
+
 
 
 
