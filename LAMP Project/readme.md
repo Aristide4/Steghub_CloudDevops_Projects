@@ -12,33 +12,6 @@ PHP – Server-side scripting language (sometimes replaced by Perl or Python)
 
 This guide outlines the setup, configuration, and usage of the LAMP stack on an Amazon Web Services (AWS) EC2 instance running Ubuntu.
 
-🛠 Step 0: Prerequisites
-Before starting, ensure you have the following:
-
-AWS Account – Sign up at https://aws.amazon.com
-
-An EC2 Instance
-
-Type: t2.micro (Free Tier eligible)
-
-AMI: Ubuntu Server 24.04 LTS (HVM)
-
-Region: us-east-1 (N. Virginia)
-
-Launch Method: AWS Management Console
-
-Security Group – Ensure the instance allows:
-
-Port 22 (SSH)
-
-Port 80 (HTTP)
-
-Port 443 (HTTPS, optional)
-
-SSH Key Pair – Downloaded during instance creation to access your server.
-
-Basic Linux Knowledge – Familiarity with the terminal.
-
 Step 1: Connect to the EC2 Instance
 Open your terminal (Linux/Mac) or PowerShell (Windows).
 
@@ -104,4 +77,5 @@ In browser, visit:
 
 http://<your-public-ip>/info.php
 You should see the PHP Info page.
+
 
