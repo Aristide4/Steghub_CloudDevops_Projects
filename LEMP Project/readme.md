@@ -123,10 +123,10 @@ Open the website in a browser using your IP address:
 ---
 ## 🛠️ Step 6: Test PHP
 sudo vim /var/www/lemp_project/info.php
-Add:
-<?php
+
+Then Add: ?php
 phpinfo();
-?>
+?
 
 Visit in browser:
 http://your_server_ip/info.php
@@ -147,13 +147,13 @@ First, create a database website_database and a user named Josh.
 Insert some rows of data into the product table.
 USE website_database;
 
-CREATE TABLE items (
+CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50),
     price DECIMAL(10,2)
 );
 
-INSERT INTO items (name, price) VALUES
+INSERT INTO products (name, price) VALUES
 ('Shoes', 50.00),
 ('Watch', 100.00),
 ('Perfume', 70.00),
@@ -168,29 +168,11 @@ INSERT INTO items (name, price) VALUES
 Create a PHP Script to Connect to MySQL and Query Data
 1. Create a new PHP file in the web root directory
 
-sudo nano /var/www/projectLEMP/learn_list.php
+sudo nano /var/www/projectLEMP/item_list.php
 This PHP script connects to the MySQL database, retrieves the content of the learn_list table, and displays the results in a list. If there's an issue with the database connection, it will throw an exception.
 
 Copy the code below into the learn_list.php file:
 
-<?php
-$user = "josh";
-$password = "Stughub12!";
-$database = "website_database";
-$table = "products";
-
-try {
-  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
-  echo "<h2>learn</h2><ol>";
-  foreach($db->query("SELECT content FROM $table") as $row) {
-    echo "<li>" . $row['content'] . "</li>";
-  }
-  echo "</ol>";
-} catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
-    die();
-}
-?>
 <img width="715" height="582" alt="image" src="https://github.com/user-attachments/assets/43390e39-ef71-4840-bf90-6886d28d1101" />
 
 2. Access this page in the browser using the domain name or public IP address followed by /item_list.php
@@ -200,3 +182,4 @@ try {
 
 Conclusion:
 The LEMP stack offers a powerful platform for hosting and serving web applications. By combining Linux, Nginx, MySQL (or MariaDB), and PHP, developers can build scalable and reliable web solutions.
+
