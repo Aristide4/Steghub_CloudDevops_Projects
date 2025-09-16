@@ -62,6 +62,9 @@ Install Node.js along with npm using the following command:
 sudo apt-get install -y nodejs
 ```
 
+<img width="1407" height="602" alt="image" src="https://github.com/user-attachments/assets/322207ad-9dbd-41ca-b207-0341a10a1515" />
+
+
 > **Note:** This command installs both Node.js and npm (Node Package Manager). npm is used to manage Node modules and packages, similar to how `apt` manages packages in Ubuntu. It also handles dependency conflicts.
 
 ### 4. Verify Installation
@@ -71,10 +74,7 @@ Confirm that both Node.js and npm have been installed correctly:
 ```bash
 node -v        // Displays Node.js version
 npm -v         // Displays npm version
-```
-![Node & NPM Versions](./images/node_npm_version.png)
-
----
+``
 
 ## Application Code Setup
 
@@ -87,7 +87,8 @@ mkdir Todo
 cd Todo
 npm init
 ```
-![Project Directory](./images/init-proj-dir.png)
+<img width="1270" height="627" alt="image" src="https://github.com/user-attachments/assets/d69a7f66-12b7-43a5-b516-79af502b3f6e" />
+
 
 Initializing the project creates a `package.json` file, which contains metadata about your application, including the dependencies it needs to run. Follow the prompts, pressing "Enter" to accept the defaults, and confirm the creation of `package.json` by typing "yes".
 
@@ -103,7 +104,8 @@ Install Express by running the following command:
 ```bash
 npm install express
 ```
-![Install Express](./images/install-express.png)
+<img width="1222" height="241" alt="image" src="https://github.com/user-attachments/assets/2da4cf5c-29e7-430f-8bec-38f04d9ea24e" />
+
 
 #### 2. Create and Verify `index.js`
 
@@ -112,7 +114,8 @@ Create an `index.js` file and confirm its existence with `ls`:
 ```bash
 touch index.js && ls
 ```
-![Index.js](./images/create-indexjs.png)
+<img width="962" height="77" alt="image" src="https://github.com/user-attachments/assets/96c843eb-9ac8-432e-8a23-0c80ed001b61" />
+
 
 #### 3. Install dotenv Module
 
@@ -121,7 +124,8 @@ The `dotenv` module is used to load environment variables from a `.env` file int
 ```bash
 npm install dotenv
 ```
-![Install dotenv](./images/install-dotenv.png)
+<img width="1134" height="155" alt="image" src="https://github.com/user-attachments/assets/cdbde1bb-096f-49fc-9507-d8b413c4a895" />
+
 
 #### 4. Set Up `index.js`
 
@@ -153,7 +157,8 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 ```
-![Index.js Code](./images/indexjs-file.png)
+<img width="1193" height="454" alt="image" src="https://github.com/user-attachments/assets/e24a58e9-500e-4e61-abd4-65ba9d82422a" />
+
 
 > **Note:** The application is configured to run on port 5000. This will be used when accessing the server through a browser.
 
@@ -164,13 +169,14 @@ To check if the setup works, start the server:
 ```bash
 node index.js
 ```
-![Start Server](./images/start-server.png)
+<img width="916" height="140" alt="image" src="https://github.com/user-attachments/assets/f6b85f68-fcb6-4416-830f-0acbe80d4673" />
+
 
 Ensure that port 5000 is opened in your EC2 security group.
 
 > **Added port 5000 to security group.**
 
-![Express Page](./images/port5000.png)
+<img width="1297" height="569" alt="image" src="https://github.com/user-attachments/assets/c3c7d6ca-da6d-4eee-883f-17afe6edf6cd" />
 
 #### Access the Server
 
@@ -178,7 +184,8 @@ Access the Express server using your public IP followed by port 5000:
 
 > http://13.60.187.88:5000
 
-![Express Page](./images/express-page.png)
+<img width="1233" height="295" alt="image" src="https://github.com/user-attachments/assets/51f8ec70-ec3e-4bd4-b328-a0b12f02ee97" />
+
 
 ---
 
@@ -198,7 +205,8 @@ First, create a `routes` folder and an `api.js` file to define endpoints for the
 ```bash
 mkdir routes && cd routes && touch api.js
 ```
-![Create Routes](./images/create-routes.png)
+<img width="948" height="139" alt="image" src="https://github.com/user-attachments/assets/a9a97664-d0c6-46bd-a3d1-cd102900879c" />
+
 
 Open the `api.js` file and insert the following code:
 
@@ -214,7 +222,8 @@ router.delete('/todos/:id', (req, res, next) => { });
 
 module.exports = router;
 ```
-![Routes Setup](./images/route.png)
+<img width="601" height="367" alt="image" src="https://github.com/user-attachments/assets/70b4f1f5-9223-4e07-9da4-fb0b4faa1b60" />
+
 
 ---
 
@@ -232,7 +241,8 @@ Navigate back to the root directory (`Todo`) and install Mongoose:
 cd ..
 npm install mongoose
 ```
-![Install Mongoose](./images/install-mongoose.png)
+<img width="1001" height="257" alt="image" src="https://github.com/user-attachments/assets/af222ff6-993f-4ffb-8a4b-8af87bc10d89" />
+
 
 #### 2. Create Model Schema
 
@@ -241,7 +251,8 @@ Next, create a `models` folder and define the schema for a To-Do item in `todo.j
 ```bash
 mkdir models && cd models && touch todo.js && ls
 ```
-![Create Models](./images/create-models.png)
+<img width="1053" height="160" alt="image" src="https://github.com/user-attachments/assets/eec8946b-6d2b-4138-8cf7-63f7676c372c" />
+
 
 Open the `todo.js` file and paste the following code:
 
@@ -262,8 +273,6 @@ const Todo = mongoose.model('todo', TodoSchema);
 
 module.exports = Todo;
 ```
-![Schema Setup](./images/schema.png)
-
 #### 3. Update Routes with the Model
 
 Update the `api.js` file to use the new Mongoose model. Open `api.js` and replace its content with the following code:
@@ -306,9 +315,6 @@ router.delete('/todos/:id', (req, res, next) => {
 
 module.exports = router;
 ```
-![Updated Routes](./images/update-route.png)
-
-
 ### MongoDB Database Setup
 
 __mLab__ provides a Database-as-a-Service (DBaaS) solution for MongoDB. MongoDB offers two cloud database management components: mLab and Atlas. In 2018, MongoDB acquired mLab, and the two systems were merged. Now, __mLab.com__ redirects to the __MongoDB Atlas website__.
@@ -317,19 +323,12 @@ __mLab__ provides a Database-as-a-Service (DBaaS) solution for MongoDB. MongoDB 
 
 First, create a MongoDB cluster and select the AWS cloud provider in the Stockholm (eu-north-1) region.
 
-![Database Overview](./images/db-overview.png)
+<img width="1134" height="478" alt="image" src="https://github.com/user-attachments/assets/9df30577-d1c6-4b6c-9585-b62b665f3981" />
+
 
 Choose the region for your cloud provider:
 
 ![Cloud Region](./images/db-cloud-provider-region.png)
-
-Allow access from any IP address (not secure for production, but useful for testing).
-
-![Network Access](./images/db-network-access.png)
-
-Create a __database__ called __todo_db__ and a __collection__ named __todos__.
-
-![Todo DB](./images/db.png)
 
 #### Step 2: Create a `.env` File
 
@@ -344,8 +343,6 @@ Add the following connection string to the `.env` file, replacing `<username>`, 
 ```bash
 DB = 'mongodb+srv://<username>:<password>@<network-address>/<dbname>?retryWrites=true&w=majority'
 ```
-![Connection String](./images/db-conn-string.png)
-
 #### Step 3: Update `index.js` to Use Environment Variables
 
 Open `index.js` and update it to connect to the MongoDB database using the connection string from the `.env` file.
@@ -399,9 +396,6 @@ app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 ```
-
-![Updated index.js](./images/update-indexjs.png)
-
 By using environment variables in a `.env` file, you keep sensitive data like connection strings secure and follow best practices by separating configuration details from your code.
 
 #### Step 4: Start Your Server
@@ -412,7 +406,8 @@ Start the server by running:
 node index.js
 ```
 
-![Server Warning](./images/warning.png)
+<img width="1220" height="122" alt="image" src="https://github.com/user-attachments/assets/da61feb7-67ea-445d-b34f-35c0b148999d" />
+
 
 You might see a deprecation warning. To silence it, you can remove `{ useNewUrlParser: true, useUnifiedTopology: true }` from the MongoDB connection code.
 
@@ -428,39 +423,26 @@ The API was accessed using the following URL:
 ```bash
 http://13.60.187.88:5000/api/todos
 ```
-![Postman Header](./images/postman-header.png)
 
 ### Creating POST Requests to the API
 
 Send a POST request to add new tasks to the To-Do list.
 
-![Post request 1](./images/post-req1.png)
-![Post request 2](./images/post-req2.png)
-
 ### Check the Database Collections
 
 View the data stored in the MongoDB collections to verify the tasks were successfully created.
-
-![Database Collections](./images/db-collections.png)
 
 ### Sending GET Requests to the API
 
 A GET request retrieves all existing tasks from the To-Do application. The backend fetches these records from the database and returns them as a response to the GET request.
 
-![GET request](./images/get-req1.png)
-
 ### Creating DELETE Requests to the API
 
 Delete a task from the To-Do list by sending a DELETE request.
 
-![Delete request](./images/delete-req.png)
-
 ### Check the Database Collections Again
 
 Verify the task was successfully removed from the database.
-
-![Database Collections](./images/db-collections2.png)
-
 
 ### Step 2 - Frontend Creation
 
@@ -468,12 +450,11 @@ Now it's time to create a user interface for the web client (browser) to interac
 
 #### 1. In the same root directory as your backend code (the Todo directory), run:
 
-> I had to change my instance type to t3.medium cause of RAM constraints
-
 ```bash
 npx create-react-app client
 ```
-![React Setup](./images/setup-react-proj.png)
+<img width="581" height="715" alt="image" src="https://github.com/user-attachments/assets/a28e12e5-fdd9-4d2b-9c5e-5d41b3d0f841" />
+
 
 This will create a new folder in the Todo directory named `client`, where all the React code will be placed.
 
@@ -485,13 +466,15 @@ Before testing the React app, the following dependencies need to be installed in
 ```bash
 npm install concurrently --save-dev
 ```
-![Concurrent](./images/install-concurrent.png)
+<img width="1197" height="259" alt="image" src="https://github.com/user-attachments/assets/d5200873-aef1-4198-bc3c-bfa8da7ac6cb" />
+
 
 - __Install nodemon__: A tool to monitor server code and automatically restart the server whenever changes are detected.
 ```bash
 npm install nodemon --save-dev
 ```
-![Nodemon](./images/install-nodemon.png)
+<img width="1019" height="199" alt="image" src="https://github.com/user-attachments/assets/5125a7df-eb4f-4496-8dc5-9a0b477ecffc" />
+
 
 - In the Todo directory, open the `package.json` file and update the scripts section as shown below:
 ```bash
@@ -501,8 +484,6 @@ npm install nodemon --save-dev
   "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
 }
 ```
-![Package.json Update](./images/script-package-json-update.png)
-
 ### Configure Proxy in package.json
 
 - Navigate to the “client” directory:
@@ -518,22 +499,20 @@ Add the following key-value pair to the `package.json` file:
 ```bash
 "proxy": "http://localhost:5000"
 ```
-![Proxy Setup](./images/proxy.png)
-
 The purpose of this proxy configuration is to allow the browser to access the server directly via `http://localhost:5000`, rather than needing to include the full path like `http://localhost:5000/api/todos`.
 
 To run the app, ensure you're inside the Todo directory, and then execute:
 ```bash
 npm run dev
 ```
-![Running App](./images/runing-app.png)
+<img width="1257" height="597" alt="image" src="https://github.com/user-attachments/assets/924d75e4-69c5-4859-bdb0-38b138181410" />
 
 The app will start running on `localhost:3000`.
 
 __Note__: TCP port 3000 was opened on the EC2 instance to allow internet access to the application.
-![Open Port 3000](./images/open3000.png)
 
-![React Page](./images/reactpage.png)
+<img width="1284" height="691" alt="image" src="https://github.com/user-attachments/assets/1ab1e905-3bd9-47d5-825f-aa4acdf6b9b2" />
+
 ## Creating React Components
 
 One of the advantages of react is that it makes use of components, which are reusable and also makes code modular. For the Todo app, there are two stateful components and one stateless component. From Todo directory, run:
@@ -561,8 +540,6 @@ __3.__ __Inside the ‘components’ directory create three files “Input.js”
 ```bash
 touch Input.js ListTodo.js Todo.js
 ```
-![Component files](./images/component-files.png)
-
 #### Open Input.js file
 ```bash
 vim Input.js
@@ -612,7 +589,6 @@ class Input extends Component {
 
 export default Input;
 ```
-![Input](./images/input.png)
 
 In oder to make use of Axios, which is a Promise based HTTP client for the browser and node.js, you need to cd into your client from your terminal and run yarn add axios or npm install axios.
 
@@ -624,8 +600,6 @@ __Install Axios__
 ```bash
 npm install axios
 ```
-![](./images/install-axios.png)
-
 #### Go to components directory
 ```bash
 cd src/components
@@ -663,7 +637,6 @@ const ListTodo = ({ todos, deleteTodo }) => {
 
 export default ListTodo;
 ```
-![Todo list](./images/listtodo.png)
 
 #### Then in the Todo.js file, write the following code
 
@@ -723,8 +696,6 @@ class Todo extends Component {
 
 export default Todo;
 ```
-![Todo](./images/todo-js.png)
-
 __We need to make a little adjustment to our react code. Delete the logo and adjust our App.js to look like this__
 
 ### Move to src folder
@@ -755,8 +726,6 @@ const App = () => {
 export default App;
 
 ```
-![Appjs](./images/App-js.png)
-
 ####  In the src directory, open the App.css
 
 ```bash
@@ -855,7 +824,6 @@ li {
 }
 
 ```
-![App css](./images/App-css.png)
 
 #### In the src directory, open the index.css
 
@@ -882,7 +850,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 ```
-![index css](./images/index-css.png)
 
 #### Go to the Todo directory
 ```bash
@@ -893,24 +860,12 @@ Run:
 ```bash
 npm run dev
 ```
-![dev](./images/run-dev.png)
 
 At this point, the To-Do app is ready and fully functional with the functionality discussed earlier: Creating a task, deleting a task, and viewing all the tasks.
 
-__The client can now be viewed in the browser__
-
-![Todo web](./images/todo-website.png)
-
-__Add some todos via the browser .__
-
-![Todos](./images/add-todo.png)
-
-__Check them on the MongoDB database__
-
-![Todo](./images/add-todo-db.png)
-
 ### Conclusion
 
-By following this guide and utilizing the available resources, you will be well-prepared to build and deploy complete web applications using the MERN stack.
+The MERN stack project successfully demonstrates the power of combining MongoDB, Express.js, React, and Node.js to build a modern full-stack web application. Through this project, we implemented a seamless integration between the frontend and backend, enabling smooth user interactions and efficient data handling.
+
 
 
