@@ -15,7 +15,8 @@ This guide offers a detailed walkthrough of how to set up and integrate each com
 
 __1.__ A t3.micro EC2 instance with Ubuntu 24.04 LTS (HVM) was launched in the eu-north-1 region using the AWS Management Console.
 
-![Launch Instance](./images/create-ec2.png)
+![Launch Instance](<img width="1405" height="738" alt="image" src="https://github.com/user-attachments/assets/18c6acb2-9630-4976-ba27-3bf009db82bb" />
+)
 ![Instance Details](./images/ec2-detail.png)
 
 __2.__ An SSH key pair named __henrylearndevops__ earlier created was used to access the instance via port 22.
@@ -923,3 +924,4 @@ __Check them on the MongoDB database__
 ### Conclusion
 
 By following this guide and utilizing the available resources, you will be well-prepared to build and deploy complete web applications using the MERN stack.
+
