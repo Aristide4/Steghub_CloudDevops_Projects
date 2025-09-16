@@ -15,9 +15,7 @@ This guide offers a detailed walkthrough of how to set up and integrate each com
 
 __1.__ A t3.micro EC2 instance with Ubuntu 24.04 LTS (HVM) was launched in the eu-north-1 region using the AWS Management Console.
 
-![Launch Instance](<img width="1405" height="738" alt="image" src="https://github.com/user-attachments/assets/18c6acb2-9630-4976-ba27-3bf009db82bb" />
-)
-![Instance Details](./images/ec2-detail.png)
+![Launch Instance] <img width="1405" height="738" alt="image" src="https://github.com/user-attachments/assets/18c6acb2-9630-4976-ba27-3bf009db82bb" />
 
 __2.__ An SSH key pair named __henrylearndevops__ earlier created was used to access the instance via port 22.
 
@@ -27,19 +25,13 @@ __3.__ The security group was configured with the following inbound rules:
 - Allow HTTPS traffic on port 443 from anywhere on the internet.
 - Allow SSH traffic on port 22 from any IP address (default setting).
 
-![Security Rules](./images/security-rule.png)
-
 __4.__ After downloading the private SSH key, Windows Terminal was used to connect to the instance, using the following command:
 
 ```bash
-ssh -i "henrylearndevops.pem" ubuntu@ec2-13-60-187-88.eu-north-1.compute.amazonaws.com
+ssh -i "lamp.pem" ubuntu@ec2-13-60-187-88.eu-north-1.compute.amazonaws.com
 ```
 
 In this command, __username=ubuntu__ and __public IP address=ec2-13-53-214-3.eu-north-1.compute.amazonaws.com__.
-
-![Connect to Instance](./images/ssh_access.png)
-
-
 
 ## Step 1 - Backend Configuration
 
@@ -53,8 +45,7 @@ sudo apt update
 ```bash
 sudo apt upgrade -y
 ```
-![Update Packages](./images/update.png)
-![Upgrade Packages](./images/upgrade.png)
+<img width="1156" height="302" alt="image" src="https://github.com/user-attachments/assets/d3afd2ff-3257-4df4-bda1-ca999aae7c3a" />
 
 ### 2. Add Node.js Repository
 
@@ -63,8 +54,6 @@ Retrieve the Node.js installation script from the Ubuntu repositories.
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 ```
-![Node.js Repository](./images/nodejs-repo.png)
-
 ### 3. Install Node.js
 
 Install Node.js along with npm using the following command:
@@ -72,7 +61,6 @@ Install Node.js along with npm using the following command:
 ```bash
 sudo apt-get install -y nodejs
 ```
-![Install Node.js](./images/install-nodejs.png)
 
 > **Note:** This command installs both Node.js and npm (Node Package Manager). npm is used to manage Node modules and packages, similar to how `apt` manages packages in Ubuntu. It also handles dependency conflicts.
 
@@ -924,4 +912,5 @@ __Check them on the MongoDB database__
 ### Conclusion
 
 By following this guide and utilizing the available resources, you will be well-prepared to build and deploy complete web applications using the MERN stack.
+
 
