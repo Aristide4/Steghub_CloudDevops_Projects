@@ -28,27 +28,27 @@ Node.js is a JavaScript runtime environment built on Chrome’s V8 engine, and i
    ```bash
    sudo apt update && sudo apt upgrade -y
    ```
-   ![Update Ubuntu](./images/update-upgrade.png)
-
-2. **Add Required Certificates**
+  
+  2. **Add Required Certificates**
    Install the necessary certificates to ensure secure package management:
    ```bash
    sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates
    ```
-   ![Add Certificates](./images/add-cert.png)
+ <img width="1322" height="138" alt="add cert before install node" src="https://github.com/user-attachments/assets/3174a5b6-a9f0-4b99-b176-69891d365f04" />
+
 
    Add the Node.js source:
    ```bash
    curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
    ```
-   ![Add Node.js Certificate](./images/add-cert2.png)
 
 3. **Install Node.js**
    Once the certificates are added, install Node.js using the following command:
    ```bash
    sudo apt-get install -y nodejs
    ```
-   ![Install Node.js](./images/install-nodejs.png)
+   <img width="1164" height="477" alt="image" src="https://github.com/user-attachments/assets/ee4f85be-63e2-4795-a7cc-afadd59daed1" />
+
 
 ---
 
@@ -67,20 +67,19 @@ For this tutorial, MongoDB will be used to store records with fields such as boo
    ```bash
    echo "deb [ signed-by=/usr/share/keyrings/mongodb-archive-keyring.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
    ```
-   ![Add MongoDB Repo](./images/db-gpg-and-repo.png)
 
 3. **Update the Package Database and Install MongoDB**
    After adding the repository, update your server and install MongoDB:
    ```bash
    sudo apt-get update
    ```
-   ![Update Server](./images/update-the-server.png)
-
-   Install MongoDB:
+ 
+  Install MongoDB:
    ```bash
    sudo apt-get install -y mongodb-org
    ```
-   ![Install MongoDB](./images/install-mongodb.png)
+  <img width="1392" height="222" alt="image" src="https://github.com/user-attachments/assets/09f12649-e7c2-40e3-a5e2-99bf68eb6162" />
+
 
 4. **Start and Enable MongoDB**
    Start and enable MongoDB to ensure it runs automatically on system startup:
@@ -89,14 +88,16 @@ For this tutorial, MongoDB will be used to store records with fields such as boo
    sudo systemctl enable mongod
    sudo systemctl status mongod
    ```
-   ![Start MongoDB](./images/start-n-enable-db.png)
+  <img width="1186" height="312" alt="image" src="https://github.com/user-attachments/assets/5afb3542-b2bb-49f6-8586-f9ef26e414ab" />
+
 
 5. **Install the `body-parser` Package**
    The `body-parser` package is used to handle JSON payloads in HTTP requests:
    ```bash
    sudo npm install body-parser
    ```
-   ![Install body-parser](./images/install-body-parser.png)
+   <img width="894" height="154" alt="image" src="https://github.com/user-attachments/assets/152ff9e5-12f5-43bf-b045-dc8fd77e9599" />
+
 
 6. **Create the Project Root Folder**
    Create a project folder named `Books` and initialize it:
@@ -104,7 +105,8 @@ For this tutorial, MongoDB will be used to store records with fields such as boo
    mkdir Books && cd Books
    npm init
    ```
-   ![Initialize Project](./images/init-proj-dir.png)
+  <img width="911" height="488" alt="image" src="https://github.com/user-attachments/assets/e40be688-655d-4534-af79-cd2824a79096" />
+
 
 7. **Add the `server.js` File**
    Create a new file named `server.js` inside the `Books` folder and add the following code:
@@ -138,10 +140,7 @@ For this tutorial, MongoDB will be used to store records with fields such as boo
      console.log('Server running at http://localhost:' + app.get('port'));
    });
    ```
-   ![Server.js File](./images/serverjs.png)
-
-
-
+ 
 ## Step 3 - Install Express and Set Up Routes to the Server
 
 In this step, we'll set up the backend to handle CRUD operations for our book collection using **Express** and **Mongoose**. Express will handle requests to and from the MongoDB database, while Mongoose provides a schema-based solution for modeling the application data.
@@ -151,7 +150,7 @@ First, install the necessary packages, **Express** for handling routes and **Mon
 ```bash
 sudo npm install express mongoose
 ```
-![Install Express and Mongoose](./images/install-express-mongoose.png)
+<img width="858" height="230" alt="image" src="https://github.com/user-attachments/assets/8f8c88f1-55f6-47fe-95d0-a5647ec069c7" />
 
 ---
 
@@ -255,8 +254,6 @@ This code defines routes for the following operations:
 - **DELETE** `/book/:isbn`: Remove a book based on ISBN.
 - **GET** `*`: Serve static files (e.g., the front-end).
 
-![Routes.js](./images/routejs.png)
-
 ---
 
 ### 3. Create the Model for Book Data
@@ -286,10 +283,6 @@ module.exports = mongoose.model('Book', bookSchema);
 ```
 
 This schema defines the structure for each book, including the book's name, ISBN number, author, and number of pages.
-
-![book.js](./images/bookjs.png)
-
-
 
 ## Step 4: Accessing Routes Using AngularJS
 
@@ -478,10 +471,13 @@ Finally, return to the `Books` directory and start the server:
 cd ..
 node server.js
 ```
-![Book Management](./images/Addbook.png)
+<img width="1766" height="955" alt="image" src="https://github.com/user-attachments/assets/5420c5f7-05f6-4e85-8220-5c178b434029" />
+
+
 
 Once the server is running, you can access the Book Register application by navigating to the public IP address or DNS name of your EC2 instance on port `3300` in a web browser.
 
 The web application allows you to add, view, update, and delete book records from the MongoDB database. You can also interact with the app using tools like `curl` for testing API endpoints.
+
 
 
