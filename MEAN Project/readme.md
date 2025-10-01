@@ -15,10 +15,10 @@ The MEAN stack is a widely-used JavaScript-based technology stack for building d
 ## Step 0: Prerequisites
 
 1. **Launching the EC2 Instance:**
-   - An EC2 instance (t3.micro) with Ubuntu 24.04 LTS(HVM) was launched in the us-east-1 region via the AWS console.
+   - An EC2 instance (t2.micro) with Ubuntu 24.04 LTS(HVM) was launched in the us-east-1d region via the AWS console.
    
-    ![Launching EC2 Instance](<img width="1581" height="357" alt="image" src="https://github.com/user-attachments/assets/17eea47c-e474-484f-88cd-95fcab621ddd" />
-)
+<img width="1581" height="357" alt="image" src="https://github.com/user-attachments/assets/17eea47c-e474-484f-88cd-95fcab621ddd" />
+
 
 ## Step 1 - Install Node.js
 
@@ -483,4 +483,5 @@ node server.js
 Once the server is running, you can access the Book Register application by navigating to the public IP address or DNS name of your EC2 instance on port `3300` in a web browser.
 
 The web application allows you to add, view, update, and delete book records from the MongoDB database. You can also interact with the app using tools like `curl` for testing API endpoints.
+
 
